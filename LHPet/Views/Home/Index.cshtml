@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "LH Pet";
+}
+
+<div class="container">
+
+    <h1> <th>SISTEMA CONTROLE INTERNO - LH PET</th> </h1>
+
+            <table class="table table-hover table-sm table-bordered table-sm caption-top">
+                <caption>Lista de clientes</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope=" col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Paciente (pet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in @ViewBag.listaClientes)
+            {
+                    
+                    <tr>
+                        <th scope="row">@item._id</th>
+                        <td>@item._nome</td>
+                        <td>@item._cpf</td>
+                        <td>@item._email</td>
+                        <td>@item._paciente</td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+
+
+            <table class="table table-hover table-sm table-bordered table-sm caption-top">
+                <caption>Lista de fornecedores</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in @ViewBag.listaFornecedores)
+            {
+                
+            
+                    <tr>
+                        <th scope="row">@item._id</th>
+                        <td>@item._nome</td>
+                        <td>@item._cnpj</td>
+                        <td>@item._email</td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+
+</div>
